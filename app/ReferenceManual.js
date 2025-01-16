@@ -1,6 +1,10 @@
 const { ColorCoder } = require('./ColorCoder');
 const { getColorFromPairNumber } = require('./ColorMapping');
 
+function formatManualLine(pairNumber, pair) {
+    return `${pairNumber}\t\t${pair.majorColor}\t\t${pair.minorColor}\n`;
+}
+
 function generateReferenceManual() {
     const totalPairs = ColorCoder.MajorColorNames.length * ColorCoder.MinorColorNames.length;
     let manual = "Color Code Reference Manual:\n";
@@ -9,7 +13,7 @@ function generateReferenceManual() {
 
     for (let i = 1; i <= totalPairs; i++) {
         const pair = getColorFromPairNumber(i);
-        manual += `${i}\t\t${pair.majorColor}\t\t${pair.minorColor}\n`;
+        manual += formatManualLine(i, pair);
     }
 
     return manual;
