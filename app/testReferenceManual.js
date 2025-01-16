@@ -28,4 +28,3 @@ function runTests() {
     console.log("All tests for reference manual passed.");
 }
 
-runTests();
