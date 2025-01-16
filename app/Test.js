@@ -1,6 +1,8 @@
 const { ColorCoder } = require('./ColorCoder');
 const { getColorFromPairNumber, getPairNumberFromColor } = require('./ColorMapping');
 const { generateReferenceManual } = require('./ReferenceManual');
+const { runTests } = require('./testReferenceManual'); 
+
 
 function test() {
     let pairNumber = 4;
@@ -41,3 +43,5 @@ function test() {
 }
 
 test();
+runTests();
+
